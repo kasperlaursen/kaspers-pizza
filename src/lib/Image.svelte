@@ -35,7 +35,9 @@
             tranistion
             duration-1000
             rounded-lg
-        `}
+        `}        
+        loading="lazy"
+        decoding="async"
 	/>
 	<span
 		class={`
