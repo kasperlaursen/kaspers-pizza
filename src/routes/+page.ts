@@ -4,10 +4,7 @@ import type { Load } from '@sveltejs/kit';
 export const load: Load = async (event) => {
 	const imageModules = import.meta.glob('../images/*.jpeg');
 	const imageModuleArray = Object.entries(imageModules);
-	const imagePromises = imageModuleArray.map(([key, imageModule]) => {
-		console.log(key);
-		return imageModule();
-	});
+	const imagePromises = imageModuleArray.map(([key, imageModule]) => imageModule());
 	const imageResults = await Promise.all(imagePromises);
 	const images: ImageGridItem[] = (imageResults as { default: string }[])
 		.map(({ default: imageUrl }, index) => {

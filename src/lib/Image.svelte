@@ -5,7 +5,6 @@
 
 	import { onMount } from 'svelte';
 	import { selectedImage } from './imageStore';
-    console.log(date)
 </script>
 
 <button
