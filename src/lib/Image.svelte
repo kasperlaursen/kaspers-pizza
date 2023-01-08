@@ -5,22 +5,12 @@
 
 	import { onMount } from 'svelte';
 	import { selectedImage } from './imageStore';
-
-	let loaded = false;
-	let thisImage: HTMLImageElement;
-
-	onMount(() => {
-		thisImage.onload = () => {
-			console.log('LOADED!');
-			loaded = true;
-		};
-	});
+    console.log(date)
 </script>
 
 <button
 	class={`
         bg-opacity-100
-        ${loaded ? 'bg-opacity-0' : ''}
         relative
         bg-contain
         bg-center
@@ -38,10 +28,8 @@
 	<img
 		{src}
 		{alt}
-		bind:this={thisImage}
 		class={`
-            opacity-0
-            ${loaded ? 'opacity-100' : ''}
+            opacity-100
             w-full
             aspect-square
             object-cover
@@ -52,8 +40,7 @@
 	/>
 	<span
 		class={`
-            opacity-0
-            ${loaded ? 'opacity-100' : ''}
+            opacity-100
             select-none
             cursor-default
             absolute
