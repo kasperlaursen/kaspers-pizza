@@ -30,6 +30,7 @@
         cursor-pointer
         hover:scale-95
         transition
+        rounded-lg
     `}
 	on:click={() => selectedImage.update(() => src)}
 	on:keyup={() => selectedImage.update(() => src)}
