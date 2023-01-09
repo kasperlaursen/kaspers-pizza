@@ -22,9 +22,18 @@
 	on:keyup
 >
 	<img
-		src={$selectedImage ?? ''}
+    srcset={$selectedImage ?? ''}
+        sizes="(max-width: 640px) 480px,
+            (max-width: 768px) 720px,
+            (max-width: 1024px) 960px,
+            (max-width: 1280px) 1280px,
+            (max-width: 1536px) 1920px,
+            2560px"
 		alt=""
-		class={`
+            class={`
+            min-w-[200px]
+            min-h-[200px]
+            mx-auto
             bg-white
             max-h-full
             rounded-3xl

@@ -1,10 +1,10 @@
 <script lang="ts">
 	export let src: string;
-	export let alt: string = 'Pizza';
+	export let alt: string = '';
 	export let date: Date | null = new Date(Date.now());
-
-	import { onMount } from 'svelte';
 	import { selectedImage } from './imageStore';
+
+
 </script>
 
 <button
@@ -25,7 +25,13 @@
 	on:keyup={() => selectedImage.update(() => src)}
 >
 	<img
-		{src}
+        srcset={src}
+        sizes="(max-width: 640px) 480px,
+            (max-width: 768px) 480px,
+            (max-width: 1024px) 480px,
+            (max-width: 1280px) 480px,
+            (max-width: 1536px) 480px,
+            1280px"
 		{alt}
 		class={`
             opacity-100
