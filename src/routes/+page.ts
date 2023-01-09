@@ -5,8 +5,8 @@ export const load: Load = async (event) => {
 	const imageModules = import.meta.glob('../images/*.(jpeg|jpg)', {
 		query: {
 			format: 'webp;jpg',
-			width: '480;720;960;1280;1920;2560',
-			picture: '',
+			width: '10,480;720;960;1280;1920;2560',
+			picture: false,
 			srcset: true
 		},
 		import: 'default',
@@ -19,7 +19,8 @@ export const load: Load = async (event) => {
 			const imageNameArray = filePath.split('/');
 			const imageName = imageNameArray[imageNameArray.length - 1].split('.')[0];
 			const date = new Date(imageName);
-			return { imageUrl, date };
+			const loader = imageUrl.split(',')[0].replace(' 10w', '');
+			return { imageUrl, date, loader };
 		})
 		.sort((a, b) => b.date.getTime() - a.date.getTime())
 		.filter(({ imageUrl }) => Boolean(imageUrl));
