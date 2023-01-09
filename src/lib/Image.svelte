@@ -43,12 +43,8 @@
 		src={loader}
 		bind:this={thisImage}
 		srcset={src}
-		sizes="(max-width: 640px) 480px,
-            (max-width: 768px) 480px,
-            (max-width: 1024px) 480px,
-            (max-width: 1280px) 480px,
-            (max-width: 1536px) 480px,
-            1280px"
+		sizes="(max-width: 1536px) 480px,
+        720px"
 		{alt}
 		class={`
             ${loaded ? 'opacity-100' : 'opacity-0'}
