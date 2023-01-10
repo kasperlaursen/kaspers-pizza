@@ -40,10 +40,11 @@
 	on:keyup={() => selectedImage.update(() => src)}
 >
 	<img
-		src={loader}
 		bind:this={thisImage}
 		srcset={src}
-		sizes="(max-width: 1536px) 480px,
+		width="500"
+		height="500"
+		sizes="(max-width: 1920px) 480px,
         720px"
 		{alt}
 		class={`
