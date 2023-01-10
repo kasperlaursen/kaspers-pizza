@@ -5,7 +5,7 @@ export const load: Load = async (event) => {
 	const imageModules = import.meta.glob('../images/*.(jpeg|jpg)', {
 		query: {
 			format: 'webp;jpg',
-			width: '10,480;720;960;1280;1920',
+			width: '10;480;720;960;1280;1920',
 			picture: false,
 			srcset: true
 		},
