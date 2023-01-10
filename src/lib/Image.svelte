@@ -56,8 +56,8 @@
             duration-1000
             rounded-lg
         `}
-		loading="lazy"
-		decoding="async"
+		loading={index < 4 ? 'lazy' : 'eager'}
+		decoding="sync"
 	/>
 	<span
 		class={`
