@@ -56,7 +56,7 @@
             duration-1000
             rounded-lg
         `}
-		loading={index < 4 ? 'lazy' : 'eager'}
+		loading={index > 5 ? 'lazy' : 'eager'}
 		decoding="sync"
 	/>
 	<span
